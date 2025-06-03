@@ -166,11 +166,11 @@ O projeto contém integração com o **RabbitMQ**, permitindo a troca de mensage
 
 Abaixo seguem os prints que comprovam o correto funcionamento da integração com o RabbitMQ:  
 
-![RabbitMQ funcionando](https://imgur.com/gallery/rabbitmq-kACwuJJ#y76KN13)
+![RabbitMQ funcionando](https://i.imgur.com/y76KN13.png)
 
-![RabbitMQ configuração](https://imgur.com/gallery/rabbitmq-kACwuJJ#qfsq1iE)  
+![RabbitMQ configuração](https://i.imgur.com/qfsq1iE.png)  
 
-![RabbitMQ conectado](https://imgur.com/gallery/rabbitmq-kACwuJJ#9QLKjAN)  
+![RabbitMQ conectado](https://i.imgur.com/9QLKjAN.png)  
 
 
 ## 🧱 Boas Práticas Aplicadas
