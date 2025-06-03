@@ -1,122 +1,228 @@
-# 🦷 GlobalSolutionRopz OdontoPrev Sprint 4 - API com C#, ML.NET e xUnit
+# 🌡️ Ropz - Rede de Observação e Previsão de Zonas Quentes
 
 ## 📖 Sobre o Projeto
 
-Este projeto tem como objetivo desenvolver uma solução inteligente para a **OdontoPrev**, utilizando uma API RESTful em C#. A aplicação gerencia operações de Pacientes, Dentistas, Clínicas, Agendamentos, Tabela de Preços, Contas a Receber/Pagar, além de detectar possíveis fraudes com o auxílio de **Machine Learning (ML.NET)**.
+Com o avanço das mudanças climáticas, eventos de calor extremo têm se tornado cada vez mais frequentes, prolongados e intensos, trazendo sérias consequências à saúde pública. Grupos vulneráveis como crianças, idosos e pessoas com doenças crônicas são particularmente afetados, estando mais propensos a condições graves como desidratação, insolação e agravamento de doenças respiratórias.
+
+Apesar da gravidade do problema, a maioria da população ainda não recebe alertas preventivos eficazes, nem tem acesso a informações claras sobre como agir diante de altas temperaturas. Essa lacuna de comunicação e prevenção aumenta o risco de impactos severos, tanto para indivíduos quanto para os sistemas de saúde.
+
+## 🧠 Solução: Ropz – Sistema Inteligente de Alerta Climático
+
+O Ropz é uma solução inteligente desenvolvida com foco em prevenir riscos à saúde causados por temperaturas elevadas. Trata-se de uma API RESTful construída com C#, ASP.NET Core e ML.NET, capaz de prever alertas de risco climático com base em dados meteorológicos históricos e em tempo real.
+
+A aplicação utiliza algoritmos de Machine Learning supervisionado para treinar um modelo preditivo que considera variáveis como:
+
+- 🌡️ Temperatura (em Celsius)
+- 🗺️ Estado
+- 📅 Mês
+- 🕒 Dia da semana
+- 📆 Ano
+
+Com isso, o sistema consegue identificar padrões críticos de calor e emitir alertas personalizados, baseando-se na localização do usuário, prevenindo assim riscos à saúde por meio de ações informadas e proativas.
+
 ## 📐 Escopo
 
-### Funcionalidades Principais:
+### Funcionalidades Principais
+✅ Treinamento do modelo com dados climáticos históricos.  
+✅ Predição de alerta com base em dados meteorológicos.  
+✅ API RESTful desenvolvida em ASP.NET Core.  
+✅ Uso de ML.NET para Machine Learning supervisionado.  
+✅ Testes automatizados com xUnit.  
+✅ Funcionalidades completas de CRUD para as seguintes classes: Usuário, Alerta e Mensagem
+✅ Integração com RabbitMQ 
 
-- ✅ Gerenciamento de **Pacientes**, **Dentistas**, **Clínicas**, **Agendamentos**, **Tabela de Preços**, **Contas a Receber/Pagar**.
-- ✅ Cadastro, leitura, atualização e exclusão (CRUD).
-- ✅ Detecção automática de **fraudes** com ML.NET.
-- ✅ Testes unitários, de integração e de sistema com **xUnit**.
-- ✅ Documentação completa com **Swagger**.
+## 🧠 Integração com ML.NET
+A API utiliza o ML.NET para treinar um modelo de classificação binária, que prevê se determinada condição climática gerará um alerta.
 
-## 🧠 Integração com ML.NET 
+## 🔍 Como Funciona
 
-A API utiliza **ML.NET** para treinar um modelo de detecção de sinistros com base em padrões de agendamentos:
+Treinamento com CSV estruturado.  
+Algoritmo: FastTree (classificação binária).  
 
-### 🔍 Como Funciona:
-- Treinamento com CSV usando `FastTree` binário.
-- Predição com base em:
-  - Quantidade de agendamentos do paciente.
-  - Quantidade de agendamentos do dentista.
+### Variáveis de entrada:
+- Temperatura (em Celsius)  
+- Estado (por extenso)  
+- Mês  
+- Dia da semana  
+- Ano  
 
-## ✅ Testes Automatizados com xUnit
+### ✨ Resultado:
+- Previsão de alerta (`true` ou `false`)  
+- Probabilidade da previsão  
 
-Foram desenvolvidos testes de:
-- **Unidade:** para validar comportamentos isolados dos serviços e repositórios.
-- **Integração:** validando conexão com o banco Oracle e endpoints REST.
-- **Sistema:** simulação de fluxo completo (ex: agendamento com possível fraude).
+## 🔁 Endpoints da API
 
-> Todos os testes foram escritos com `xUnit` 
-
-## 🧼 Aplicação de Clean Code e Princípios SOLID
-
-### 🧹 Clean Code
-
-- **Nomes claros e objetivos.**
-- **Métodos pequenos e coesos.**
-- **Reutilização de lógica.**
-- **Separação de responsabilidades.**
-
-### 🧱 Princípios SOLID
-
-| Princípio | Aplicação |
-|----------|-----------|
-| **SRP** - Single Responsibility | Cada classe faz apenas uma coisa. Ex: `RepositoryPaciente` trata só de pacientes. |
-| **OCP** - Open/Closed | Classes podem ser estendidas sem modificação. Ex: serviços validam novas regras via extensões. |
-| **LSP** - Liskov Substitution | Interfaces e heranças respeitam substituição. |
-| **ISP** - Interface Segregation | Interfaces específicas:`IPacienteRepository` etc. |
-| **DIP** - Dependency Inversion | Controllers e serviços dependem de abstrações, usando injeção de dependência. |
-
-## 🏗️ Arquitetura da API
-
-Utilizamos arquitetura baseada em **Microservices**:
-
-- 🔹 **Escalável**: cada funcionalidade pode ser isolada.
-- 🔹 **Flexível**: serviços independentes entre si.
-- 🔹 **Facilita deploys e testes.**
-- 🔹 **Alta disponibilidade.**
-
-## 📌 Endpoints CRUD
-
-A API realiza operações CRUD com banco Oracle para os seguintes recursos:
-
-- `GET /api/pacientes`
-- `POST /api/pacientes`
-- `PUT /api/pacientes/{id}`
-- `DELETE /api/pacientes/{id}`
-
-(Endpoints similares para dentistas, clínicas, agendamentos, fraudes, contas e preços)
-
-## 🧪 Exemplo de Integração ML.NET (Treinamento e Predição)
-
-```csharp
-[HttpGet("treinar")]
-public IActionResult TreinarModelo() { ... }
-
-[HttpPost("verificar")]
-public IActionResult VerificarSinistro([FromBody] VerificacaoSinistroDTO entrada) { ... }
+### 🔧 Treinamento do Modelo
 ```
+GET /api/temperatura/treinar
+```
+Treina o modelo a partir de um arquivo CSV salvo em `ML/DadosTreinamento.csv`.
 
-## 🏭 Padrão de Criação: Simple Factory
-
-```csharp
-public class UsuarioFactory
+### 📊 Predição de Alerta
+```
+POST /api/temperatura/verificar
+```
+**Exemplo de Requisição:**
+```json
 {
-    public static Usuario CriarUsuario(string nome, string email)
-    {
-        return new Usuario { Nome = nome, Email = email };
-    }
+  "temperatura": 32.5,
+  "estado": "São Paulo",
+  "mes": "Janeiro",
+  "diaDaSemana": "Segunda",
+  "ano": 2024
+}
+```
+**Exemplo de Resposta:**
+```json
+{
+  "alerta": true,
+  "probabilidade": 0.87
 }
 ```
 
+## 🧪 Testes Automatizados com xUnit
+
+O projeto conta com testes automatizados utilizando o framework xUnit.
+
+### Tipos de Testes
+✅ Testes de Unidade: validação de predições, comportamento de entrada, resposta do modelo.  
+✅ Testes de Integração: chamadas reais aos endpoints da API simulando requisições POST e GET.  
+✅ Testes de Sistema: fluxo completo de treinamento e predição.  
+
+### Exemplo - Classe `AlertaTest`
+```csharp
+[Fact]
+public void TipoMensagemVazio_DeveLancarExcecao()
+{
+    var alerta = new Alerta();
+    var ex = Assert.Throws<ArgumentException>(() => alerta.tipo_mensagem = 0);
+    Assert.Equal("Tipo de mensagem é obrigatório.", ex.Message);
+}
+```
+
+### Exemplo - Classe `UsuarioTest`
+```csharp
+[Fact]
+public void EmailSemArroba_DeveLancarExcecao()
+{
+    var usuario = new Usuario();
+    var ex = Assert.Throws<ArgumentException>(() => usuario.email = "testeemail.com");
+    Assert.Equal("E-mail inválido. Deve conter '@'.", ex.Message);
+}
+```
+
+### Exemplo - Teste de Predição
+```csharp
+[Fact]
+public void DeveRetornarAlerta_QuandoTemperaturaAlta()
+{
+    var builder = new TemperaturaModelBuilder();
+    builder.TreinarModelo();
+
+    var entrada = new TemperaturaModelBuilder.TemperaturaData
+    {
+        temperatura = 38.5f,
+        estado = "Rio de Janeiro",
+        mes = "Janeiro",
+        diaDaSemana = "Segunda",
+        ano = 2024
+    };
+
+    var resultado = builder.Prever(entrada);
+    Assert.True(resultado.Probability > 0.5);
+}
+```
+
+
+### Exemplo de Teste com xUnit
+```csharp
+[Fact]
+public void DeveRetornarAlerta_QuandoTemperaturaAlta()
+{
+    var builder = new TemperaturaModelBuilder();
+    builder.TreinarModelo();
+
+    var entrada = new TemperaturaModelBuilder.TemperaturaData
+    {
+        temperatura = 38.5f,
+        estado = "Rio de Janeiro",
+        mes = "Janeiro",
+        diaDaSemana = "Segunda",
+        ano = 2024
+    };
+
+    var resultado = builder.Prever(entrada);
+
+    Assert.True(resultado.Probability > 0.5);
+}
+```
+## ✅ RabbitMQ
+
+O projeto contém integração com o **RabbitMQ**, permitindo a troca de mensagens de forma eficiente e escalável.  
+
+### ✔️ Demonstração de funcionamento
+
+Abaixo seguem os prints que comprovam o correto funcionamento da integração com o RabbitMQ:  
+
+![RabbitMQ funcionando](https://imgur.com/y76KN13)
+
+![RabbitMQ configuração](https://imgur.com/qfsq1iE)  
+
+![RabbitMQ conectado](https://imgur.com/9QLKjAN)  
+
+
+## 🧱 Boas Práticas Aplicadas
+
+### 🧼 Clean Code
+- Métodos pequenos e reutilizáveis  
+- Separação clara de responsabilidades  
+- Nomenclaturas semânticas  
+
+### 🧱 Princípios SOLID
+| Princípio | Aplicação |
+|----------|------------|
+| SRP - Responsabilidade Única | Cada classe realiza uma função específica (ex: TemperaturaModelBuilder) |
+| OCP - Aberto/Fechado | Fácil de estender sem modificar |
+| ISP - Segregação de Interfaces | Controladores e DTOs são específicos para seu propósito |
+| DIP - Inversão de Dependência | Abstrações são utilizadas sempre que possível |
+
 ## 🚀 Como Rodar a API
 
-1. Clone o repositório:
+Clone o repositório:
 ```bash
 git clone https://github.com/ThaiisRibeiro/GlobalSolutionRopz.git
 cd GlobalSolutionRopz
 ```
 
-2. Configure o banco Oracle no `Program.cs` e `DbContext.cs`.
-
-3. Restaure as dependências:
+Restaure os pacotes:
 ```bash
 dotnet restore
 ```
 
-4. Execute o projeto:
+Execute a aplicação:
 ```bash
 dotnet run
 ```
+## 🛠️ Configurações Importantes
 
-5. Acesse o Swagger em `https://localhost:{porta}/swagger`
+### 🔐 Configurar Chave da API OpenWeather
+No arquivo `WeatherService.cs`, altere a seguinte linha para incluir sua chave da API:
 
-## 👥 Integrantes do Grupo
+```csharp
+private readonly string _apiKey = "SUA_CHAVE_OPENWEATHER";
+```
 
-- **Thaís Ribeiro Asfur** (RM553870) 🎯  
-- **Lucas Minozzo Bronzeri** (RM553745)  
-- **Diego Costa Silva** (RM552648)
+Você pode obter sua chave gratuita em: https://openweathermap.org/api
+
+### 🗃️ Configurar Login e Senha do Banco de Dados
+
+
+⚠️ Verifique se o arquivo `DadosTreinamento.csv` está em `ML/DadosTreinamento.csv`.
+
+
+## 👨‍💻 Integrantes do Projeto
+
+- Thaís Ribeiro Asfur (RM553870)
+- Lucas Minozzo Bronzeri (RM553745)
+- Diego Costa Silva (RM552648)
+
