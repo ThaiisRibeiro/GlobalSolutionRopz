@@ -1,0 +1,101 @@
+temperatura,estado,mes,diaDaSemana,ano,alertaEmitido
+37.8,Acre,12,2,2024,True
+29.9,Bahia,12,0,2024,False
+38.5,Piauí,2,4,2024,True
+33.4,Acre,2,1,2024,False
+29.7,Rio Grande do Norte,1,4,2024,False
+29.0,Rio Grande do Sul,12,4,2024,False
+33.4,Paraíba,10,2,2024,False
+41.2,Acre,3,5,2024,True
+33.5,Goiás,3,1,2024,False
+44.1,Mato Grosso,2,0,2024,True
+32.6,Mato Grosso do Sul,6,4,2024,False
+30.3,Alagoas,12,3,2024,False
+35.7,Minas Gerais,2,4,2024,True
+30.9,Rio Grande do Sul,10,6,2024,False
+32.2,Distrito Federal,12,0,2024,False
+25.9,Espírito Santo,5,0,2024,False
+42.1,Amazonas,7,2,2024,True
+34.1,Tocantins,6,1,2024,False
+32.4,Distrito Federal,11,2,2024,False
+39.0,Rondônia,11,0,2024,True
+37.2,Ceará,9,5,2024,True
+29.9,Paraíba,7,2,2024,False
+44.8,Rio Grande do Sul,12,4,2024,True
+29.4,Mato Grosso,1,1,2024,False
+41.4,Sergipe,6,3,2024,True
+30.4,Distrito Federal,10,5,2024,False
+31.3,Rio Grande do Sul,8,3,2024,False
+42.7,Rio Grande do Sul,8,1,2024,True
+30.3,Espírito Santo,12,4,2024,False
+35.8,Santa Catarina,10,3,2024,True
+43.0,Minas Gerais,6,1,2024,True
+44.9,Bahia,9,3,2024,True
+26.8,Alagoas,2,1,2024,False
+37.5,Sergipe,11,3,2024,True
+36.9,Minas Gerais,7,4,2024,True
+44.9,Pernambuco,5,4,2024,True
+42.2,Acre,11,5,2024,True
+27.3,Piauí,5,6,2024,False
+37.8,Amazonas,5,3,2024,True
+28.2,Acre,12,5,2024,False
+30.3,Pernambuco,3,4,2024,False
+43.3,Rio Grande do Sul,5,6,2024,True
+37.8,Rio Grande do Norte,4,1,2024,True
+32.5,Ceará,9,6,2024,False
+43.4,Acre,10,2,2024,True
+34.8,Amazonas,6,6,2024,False
+41.1,Espírito Santo,1,1,2024,True
+42.6,Amapá,2,5,2024,True
+34.7,Amapá,9,6,2024,False
+27.5,Rondônia,8,4,2024,False
+28.3,Pernambuco,10,3,2024,False
+44.3,Piauí,12,5,2024,True
+29.0,Maranhão,7,5,2024,False
+38.0,Paraíba,9,3,2024,True
+27.4,Espírito Santo,2,2,2024,False
+25.4,Piauí,4,4,2024,False
+29.4,Amapá,12,5,2024,False
+26.2,Amapá,1,6,2024,False
+31.6,Pernambuco,4,2,2024,False
+38.4,Distrito Federal,9,1,2024,True
+39.5,Rio de Janeiro,10,3,2024,True
+29.9,Paraná,7,1,2024,False
+26.9,Rondônia,7,2,2024,False
+33.5,Paraíba,12,0,2024,False
+38.5,Rio Grande do Sul,2,0,2024,True
+33.1,Mato Grosso,2,1,2024,False
+28.8,Piauí,8,1,2024,False
+33.4,Goiás,8,1,2024,False
+42.5,Amapá,8,6,2024,True
+42.2,Piauí,2,0,2024,True
+38.0,Piauí,1,0,2024,True
+43.5,Espírito Santo,3,3,2024,True
+34.7,Distrito Federal,7,0,2024,False
+28.3,Acre,7,2,2024,False
+43.5,Sergipe,8,2,2024,True
+33.5,Santa Catarina,9,5,2024,False
+39.4,Bahia,4,2,2024,True
+29.4,Alagoas,10,5,2024,False
+35.8,Santa Catarina,6,0,2024,True
+26.0,Paraná,9,6,2024,False
+35.6,Alagoas,9,0,2024,True
+42.0,Amapá,10,0,2024,True
+38.5,Espírito Santo,7,0,2024,True
+43.8,Rio de Janeiro,4,4,2024,True
+36.9,Rio Grande do Norte,2,3,2024,True
+38.1,Rio de Janeiro,9,2,2024,True
+43.7,Distrito Federal,11,5,2024,True
+31.3,Goiás,7,1,2024,False
+38.4,Maranhão,8,2,2024,True
+43.6,Amapá,1,3,2024,True
+37.4,Rio de Janeiro,2,0,2024,True
+35.8,Pernambuco,5,1,2024,True
+43.7,Amapá,4,2,2024,True
+30.7,Paraíba,9,5,2024,False
+31.1,Sergipe,11,4,2024,False
+25.2,Tocantins,9,2,2024,False
+43.6,Amazonas,3,2,2024,True
+27.3,Amazonas,12,4,2024,False
+28.1,Maranhão,10,1,2024,False
+39.4,Distrito Federal,11,5,2024,True

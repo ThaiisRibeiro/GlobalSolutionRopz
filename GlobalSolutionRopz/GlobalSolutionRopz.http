@@ -1,0 +1,6 @@
+@GlobalSolutionRopz_HostAddress = http://localhost:5211
+
+GET {{GlobalSolutionRopz_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
