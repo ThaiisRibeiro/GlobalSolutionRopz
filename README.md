@@ -183,7 +183,7 @@ Abaixo seguem os prints que comprovam o correto funcionamento da integração co
 ### 🧱 Princípios SOLID
 | Princípio | Aplicação |
 |----------|------------|
-| SRP - Responsabilidade Única | Cada classe realiza uma função específica (ex: TemperaturaModelBuilder) |
+| SRP - Responsabilidade Única | Cada classe realiza uma função específica |
 | OCP - Aberto/Fechado | Fácil de estender sem modificar |
 | ISP - Segregação de Interfaces | Controladores e DTOs são específicos para seu propósito |
 | DIP - Inversão de Dependência | Abstrações são utilizadas sempre que possível |
