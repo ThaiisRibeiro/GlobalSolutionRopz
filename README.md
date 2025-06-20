@@ -222,9 +222,5 @@ Você pode obter sua chave gratuita em: https://openweathermap.org/api
 ⚠️ Verifique se o arquivo `DadosTreinamento.csv` está em `ML/DadosTreinamento.csv`.
 
 
-## 👨‍💻 Integrantes do Projeto
 
-- Thaís Ribeiro Asfur (RM553870)
-- Lucas Minozzo Bronzeri (RM553745)
-- Diego Costa Silva (RM552648)
 
